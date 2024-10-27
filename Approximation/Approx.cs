@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Approximation
 {
     public readonly struct ApproxResult(double P0, double P1)
@@ -17,11 +12,11 @@ namespace Approximation
 
         public static ApproxResult CalculateLineApproximationOneVariable(int[] arrayX, int[] arrayY)
         {
-            long sum1 = arrayX.Sum(); //s1
-            long sum2 = arrayY.Sum(); //s2
+            var sum1 = arrayX.Sum(v=> (long)v); //s1
+            var sum2 = arrayY.Sum(v => (long)v); //s2
             var n = arrayX.Length;
-            long sum3 = arrayX.Select(xi => xi * xi).Sum(); //s3
-            long sum4 = arrayX.Zip(arrayY, (xi, yi) => xi * yi).Sum(); //s4
+            var sum3 = arrayX.Select(xi => xi * xi).Sum(v => (long)v); //s3
+            var sum4 = arrayX.Zip(arrayY, (xi, yi) => xi * yi).Sum(v => (long)v); //s4
 
             var w = n * sum3 - sum1 * sum1;
             var w1 = sum2 * sum3 - sum4 * sum1;

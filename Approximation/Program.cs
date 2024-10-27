@@ -5,8 +5,8 @@ using Approximation;
 PritnStudentInfo();
 
 var length = 10;
-var arrayX = Utils.GenerateRandomArray(length, 1000);
-var arrayY = Utils.GenerateRandomArray(length, 1000);
+var arrayX = Utils.GenerateRandomArray(length);
+var arrayY = Utils.GenerateRandomArray(length);
 
 var approx = Approx.CalculateLineApproximationOneVariable(arrayX, arrayY);
 Approx.PrintResult(approx, arrayX, arrayY);

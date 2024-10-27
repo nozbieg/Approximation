@@ -4,9 +4,8 @@ using Approximation;
 
 PritnStudentInfo();
 
-var length = 10;
-var arrayX = Utils.GenerateRandomArray(length);
-var arrayY = Utils.GenerateRandomArray(length);
+var arrayX =new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+var arrayY = new int[] {10,18,22,27,36,49,56,64,70,78 };
 
 var approx = Approx.CalculateLineApproximationOneVariable(arrayX, arrayY);
 Approx.PrintResult(approx, arrayX, arrayY);
